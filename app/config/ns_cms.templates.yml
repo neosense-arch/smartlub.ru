@@ -1,0 +1,16 @@
+templates:
+    -
+        path:    "NSCmsBundle:Pages:page.html.twig"
+        title:   "Default page template"
+        default: true
+        areas:
+            -
+                name: header
+                title: "Верхняя панель"
+                fixed: true
+            -
+                name: left
+                title: "Левая панель"
+            -
+                name: content
+                title: "Контентная область"

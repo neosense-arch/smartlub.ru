@@ -1,0 +1,54 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: ns_admin.bundles.yml }
+    - { resource: @NSCoreBundle/Resources/config/core-config.yml }
+
+# Avalanche Imagine
+avalanche_imagine:
+    source_root:  %kernel.root_dir%/../web
+    web_root:     %kernel.root_dir%/../web
+    filters:
+        ns_admin_image:
+            type:    thumbnail
+            options: { size: [200, 200], mode: inset }
+        ns_admin_preview:
+            type:    thumbnail
+            options: { size: [128, 128], mode: outbound }
+
+        interiors_gallery_thumbnail:
+            type: thumbnail
+            options: { size: [315, 197], mode: outbound }
+
+        interiors_photo_thumbnail:
+            type: thumbnail
+            options: { size: [145, 90], mode: outbound }
+
+        photo_big:
+            type: thumbnail
+            options: { size: [648, 648], mode: inset }
+
+        catalog_category_top_menu:
+            type: thumbnail
+            options: { size: [147, 55], mode: outbound }
+
+        catalog_item_thumbnail:
+            type: thumbnail
+            options: { size: [146, 90], mode: outbound }
+
+        catalog_item_thumbnail_small:
+            type:    chain
+            options:
+                filters:
+                    relative_resize:
+                        heighten: 100
+                    thumbnail:
+                        size: [100, 100]
+                        mode: outbound
+
+        catalog_item_detail_thumbnail:
+            type:    relative_resize
+            options: { widen: 300 }
+
+        catalog_item_detail_full:
+            type:    thumbnail
+            options: { size: [800, 800], mode: inset }

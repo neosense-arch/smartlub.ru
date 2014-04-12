@@ -1,0 +1,7 @@
+parameters:
+#    sl_front.example.class: SL\FrontBundle\Example
+
+services:
+#    sl_front.example:
+#        class: %sl_front.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
