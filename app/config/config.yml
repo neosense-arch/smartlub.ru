@@ -3,6 +3,11 @@ imports:
     - { resource: ns_admin.bundles.yml }
     - { resource: @NSCoreBundle/Resources/config/core-config.yml }
 
+# Framework
+framework:
+    templating:
+        assets_version: 1
+
 # Avalanche Imagine
 avalanche_imagine:
     source_root:  %kernel.root_dir%/../web
