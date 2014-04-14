@@ -29,6 +29,11 @@
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-lg-12">
+
+                {# HEADER AREA #}
+                {{ ns_cms_area(blocks, 'header') }}
+
+
                 <div class="phone">
                     <span class="code">+7 (495)</span> 744 6450
                     <div class="iconTime">
@@ -77,6 +82,8 @@
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-lg-12">
+                {# MENU AREA #}
+                {{ ns_cms_area(blocks, 'menu') }}
 
                 <div class="navbar" role="navigation">
                     <div class="logo"><a href="#"><img src="{{ asset('/bundles/slfront/img/logo.png') }}" alt=""></a></div>
@@ -123,7 +130,8 @@
     </div>
 </header>
 
-<!-- HEADER EOF   -->
+{# CONTENT AREA #}
+{{ ns_cms_area(blocks, 'content') }}
 
 <!-- BEGIN SLIDER -->
 
@@ -190,8 +198,6 @@
 </section>
 
 <!-- SLIDER EOF   -->
-
-<!-- BEGIN CONTENT -->
 
 <div class="content">
 <div class="contentTop">
@@ -526,6 +532,9 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="row clearfix">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        {# FOOTER AREA #}
+                        {{ ns_cms_area(blocks, 'footer1') }}
+
                         <a href="#"><img src="{{ asset('/bundles/slfront/img/footer_logo.png') }}" alt=""></a>
                         <div class="footerSocial">
                             <a href="#"><img src="{{ asset('/bundles/slfront/img/icon_social_1.png') }}" alt=""></a>
@@ -537,6 +546,9 @@
                         <p>© 2014 Smart Lubricants</p>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        {# FOOTER AREA #}
+                        {{ ns_cms_area(blocks, 'footer2') }}
+
                         <div class="blockFooterInf">
                             <h3>Smart Lubricants</h3>
                             <ul class="footer-list">
@@ -553,6 +565,9 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="row clearfix">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        {# FOOTER AREA #}
+                        {{ ns_cms_area(blocks, 'footer3') }}
+
                         <div class="blockFooterInf">
                             <h3>Каталог продукции</h3>
                             <ul class="footer-list">
@@ -565,6 +580,9 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        {# FOOTER AREA #}
+                        {{ ns_cms_area(blocks, 'footer4') }}
+
                         <div class="blockFooterInf">
                             <h3>Контактная информация</h3>
                             <p><strong>Адрес:</strong> Московская область,<br> г. Железнодорожный, ул. Речная, влад. 2. <strong>Телефон:</strong> <span>+7 (495) <strong>744 6450</strong></span></p>
