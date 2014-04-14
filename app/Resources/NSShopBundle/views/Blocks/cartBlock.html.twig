@@ -1,0 +1,7 @@
+<div class="basketTop">
+    Ваша корзина
+    <span><a href="{{ url('ns_cms_page_name', {name: 'cart'}) }}">
+        {{ '{0} Пусто|{1} 1 товар|[2,4] %count% товара|[5,20] %count% товаров|{21} 21 товар|[22,24] %count% товара|[25,30] %count% товаров|{31} 31 товар|[32,34] %count% товара|[35,+Inf[ %count% товаров'|transchoice(order.totalCount, {'%count': order.totalCount}) }}
+    </a></span>
+    <a href="{{ url('ns_cms_page_name', {name: 'cart'}) }}" class="btn">Оформить</a>
+</div>
