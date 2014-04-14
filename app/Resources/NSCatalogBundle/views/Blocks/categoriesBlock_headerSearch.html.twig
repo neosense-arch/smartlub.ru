@@ -1,0 +1,19 @@
+<div class="clearfixSearch"></div>
+<div class="searchTop">
+    <div class="searchTopWrapper">
+        <div class="boxSearch">
+            <form action="" name="Search" method="post">
+                <input type="submit" value="" >
+                <div class="selectSearch">
+                    <select class="styled">
+                        <option value="">Все товары</option>
+                        {% for category in categories %}
+                            <option value="{{ category.id }}">{{ category.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="inputSearch"><input type="text" name="search" placeholder="Поиск ..."></div>
+            </form>
+        </div>
+    </div>
+</div>
