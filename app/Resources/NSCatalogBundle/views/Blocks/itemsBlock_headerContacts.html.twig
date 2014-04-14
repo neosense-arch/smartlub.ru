@@ -1,0 +1,14 @@
+{% if items|length %}
+    {% set phone = items[0].settings.phone %}
+    {% set workTime = items[0].settings.workTime %}
+
+    <div class="phone">
+        <span class="code">{{ phone|split(' ')|slice(0,2)|join(' ') }}</span> {{ phone|split(' ')|slice(2)|join(' ') }}
+        <div class="iconTime">
+            <div class="contTime">
+                <a href="#"></a>
+                <div class="timeOpen"><div class="contTime"><span></span>{{ workTime }}</div></div>
+            </div>
+        </div>
+    </div>
+{% endif %}
