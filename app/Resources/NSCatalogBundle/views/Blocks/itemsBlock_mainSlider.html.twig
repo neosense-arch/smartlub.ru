@@ -1,0 +1,28 @@
+{% if items|length %}
+<section class="boxSlider">
+    <div class="boxSliderCont">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            {% for item in items %}
+                                <li>
+                                    <img src="{{ asset('upload/j/' ~ item.settings.sliderPhoto|default(item.settings.photos[0])) }}" alt="{{ item.title }}">
+                                    <div class="flex-caption">
+                                        <h2>{{ item.settings.sliderTitle|default(item.title) }}</h2>
+                                        <p>{{ item.settings.sliderDescription|default(item.settings.description) }}</p>
+                                        <a href="{{ url('ns_catalog_item', {categorySlug: item.category.slug, itemSlug: item.slug}) }}" class="btn btn-info">Инфо</a>
+                                        <a href="#" class="btn btn-primary">В корзину</a>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

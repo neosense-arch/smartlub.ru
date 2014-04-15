@@ -20,9 +20,9 @@ avalanche_imagine:
             type:    thumbnail
             options: { size: [128, 128], mode: outbound }
 
-        interiors_gallery_thumbnail:
+        item_slider:
             type: thumbnail
-            options: { size: [315, 197], mode: outbound }
+            options: { size: [245, 376], mode: outbound }
 
         interiors_photo_thumbnail:
             type: thumbnail
