@@ -13,13 +13,12 @@
                                         <h2>{{ item.settings.sliderTitle|default(item.title) }}</h2>
                                         <p>{{ item.settings.sliderDescription|default(item.settings.description) }}</p>
                                         <a href="{{ url('ns_catalog_item', {categorySlug: item.category.slug, itemSlug: item.slug}) }}" class="btn btn-info">Инфо</a>
-                                        <a href="#" class="btn btn-primary">В корзину</a>
+                                        <a href="#" class="btn btn-primary add-to-cart" data-url="{{ url('ns_shop_cart_add') }}" data-id="{{ item.id }}">В корзину</a>
                                     </div>
                                 </li>
                             {% endfor %}
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>

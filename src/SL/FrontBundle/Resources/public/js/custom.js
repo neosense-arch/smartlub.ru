@@ -1,10 +1,30 @@
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide",
-	touch: false,
-	slideshow: true
-  });
-  
+$(window).load(function () {
+    $('.flexslider').flexslider({
+        animation: "slide",
+        touch: false,
+        slideshow: true
+    });
+
+    $('.add-to-cart').click(function(){
+        $.ajax($(this).attr('data-url'), {
+            type: 'POST',
+            data: {
+                itemId: $(this).attr('data-id'),
+                quantity: 1
+            },
+            success: function(res){
+                if (res.error) {
+                    throw res.error;
+                }
+                $('.cart-total-price').text(res.totalPrice.toFixed(2).toString().replace('.', ',') + ' р');
+                $('.cart-total-count').text(res.totalCount);
+
+                $('#cartAdded').modal('show');
+            }
+        });
+
+        return false;
+    });
 });
 
 $(function(){
@@ -64,42 +84,42 @@ $(function(){
 });
 
 
-function initialize(){
-							var myLatlng = new google.maps.LatLng(55.747304, 37.96019);
-							var myOptions = {
-							 zoom: 14,
-							 scrollwheel: false,
-							 center: myLatlng,							 
-							 mapTypeId: google.maps.MapTypeId.ROADMAP,
-							 mapTypeControlOptions: {
-							  position: google.maps.ControlPosition.BOTTOM_LEFT
-							 }
-							}
-							var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-							var contentString = '<div id="contentMap">'+								
-								'<div class="telMap">+7 (495) <span>744 6450</span></div>'+
-								'<div class="email">email@domin.com</div>'+
-								'<p>Московская область,<br> г. Железнодорожный, ул. Речная, влад. 2.</p>'+
-								
-								'</div>';
-							var infowindow = new google.maps.InfoWindow({
-								content: contentString
-							});
+function initialize() {
+    var myLatlng = new google.maps.LatLng(55.747304, 37.96019);
+    var myOptions = {
+        zoom: 14,
+        scrollwheel: false,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControlOptions: {
+            position: google.maps.ControlPosition.BOTTOM_LEFT
+        }
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    var contentString = '<div id="contentMap">' +
+        '<div class="telMap">+7 (495) <span>744 6450</span></div>' +
+        '<div class="email">email@domin.com</div>' +
+        '<p>Московская область,<br> г. Железнодорожный, ул. Речная, влад. 2.</p>' +
 
-							
-							var markerImage = new google.maps.MarkerImage(
-							  'img/descriptionMap.png',
-							  new google.maps.Size(37,19)
-							);    
-						
-							var marker = new google.maps.Marker({
-							 icon: markerImage,
-							 position: myLatlng, 
-							 map: map,
-							 title:"Ювелирная дизайн-студия The Just Diamond"
-							});
-							 google.maps.event.addListener(marker, 'click', function() {
-								infowindow.open(map,marker);
-							});
-							 google.maps.event.trigger(marker, "click");
-						   }
+        '</div>';
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+
+
+    var markerImage = new google.maps.MarkerImage(
+        'img/descriptionMap.png',
+        new google.maps.Size(37, 19)
+    );
+
+    var marker = new google.maps.Marker({
+        icon: markerImage,
+        position: myLatlng,
+        map: map,
+        title: "Ювелирная дизайн-студия The Just Diamond"
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(map, marker);
+    });
+    google.maps.event.trigger(marker, "click");
+}

@@ -1,0 +1,7 @@
+#cartAdded .modal-title {
+    padding: 39px 0 0 0;
+    text-align: center;
+}
+#cartAdded .modal-title a {
+    text-decoration: underline;
+}
