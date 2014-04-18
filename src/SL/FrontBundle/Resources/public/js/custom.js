@@ -16,9 +16,12 @@ $(window).load(function () {
                 if (res.error) {
                     throw res.error;
                 }
-                $('.cart-total-price').text(res.totalPrice.toFixed(2).toString().replace('.', ',') + ' р');
-                $('.cart-total-count').text(res.totalCount);
-
+                $.ajax($('.basketTop').attr('data-url'), {
+                    type: 'GET',
+                    success: function(res){
+                        $('.basketTop').replaceWith(res);
+                    }
+                });
                 $('#cartAdded').modal('show');
             }
         });
