@@ -13,7 +13,9 @@
 
             <ul class="nav navbar-nav" id="nav-main">
                 {% for item in menu.children if item.displayed %}
-                    <li><a href="{{ item.uri }}">{{ item.label|upper }}</a></li>
+                    <li{% if matcher.isCurrent(item) or matcher.isAncestor(item) %} class="active"{% endif %}>
+                        <a href="{{ item.uri }}">{{ item.label|upper }}</a>
+                    </li>
                 {% endfor %}
             </ul>
 
