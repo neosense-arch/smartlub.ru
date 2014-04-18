@@ -604,6 +604,13 @@ nav ul.nav li.active a { background: #62db00; }
 	color:#FFFFFF;}
 .boxOneNew{
 	padding:0 0 45px 0;}
+.boxOneNew > a {
+    display: block;
+    overflow: hidden;
+    float: left;
+    position: relative;
+    z-index: 1;
+}
 .boxOneNew a img{	
 	float:left;
 	width:180px;
@@ -611,7 +618,10 @@ nav ul.nav li.active a { background: #62db00; }
 .descriptionNew{
 	float:left;
 	margin:0 0 0 -180px;
-	width:100%;}
+	width:100%;
+    position: relative;
+    z-index: 0;
+}
 .descriptionNewCont{
 	padding:0 0 0 209px;}
 .descriptionNewCont p{
