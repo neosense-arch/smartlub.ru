@@ -56,30 +56,20 @@
                         {# FOOTER AREA #}
                         {{ ns_cms_area(blocks, 'footer1') }}
 
-                        <a href="#"><img src="{{ asset('/bundles/slfront/img/footer_logo.png') }}" alt=""></a>
+                        <a href="{{ url('ns_cms_main') }}"><img src="{{ asset('/bundles/slfront/img/footer_logo.png') }}" alt=""></a>
                         <div class="footerSocial">
-                            <a href="#"><img src="{{ asset('/bundles/slfront/img/icon_social_1.png') }}" alt=""></a>
-                            <a href="#"><img src="{{ asset('/bundles/slfront/img/icon_social_2.png') }}" alt=""></a>
-                            <a href="#"><img src="{{ asset('/bundles/slfront/img/icon_social_3.png') }}" alt=""></a>
-                            <a href="#"><img src="{{ asset('/bundles/slfront/img/icon_social_4.png') }}" alt=""></a>
+                            {#<a href="#"><img src="{{ asset('/bundles/slfront/img/icon_social_1.png') }}" alt=""></a>#}
+                            {#<a href="#"><img src="{{ asset('/bundles/slfront/img/icon_social_2.png') }}" alt=""></a>#}
+                            {#<a href="#"><img src="{{ asset('/bundles/slfront/img/icon_social_3.png') }}" alt=""></a>#}
+                            {#<a href="#"><img src="{{ asset('/bundles/slfront/img/icon_social_4.png') }}" alt=""></a>#}
+                            <a href="#">&nbsp;</a>
                             <div class="clear"></div>
                         </div>
-                        <p>© 2014 Smart Lubricants</p>
+                        <p>© {{ 'now'|date('Y') }} Smart Lubricants</p>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         {# FOOTER AREA #}
                         {{ ns_cms_area(blocks, 'footer2') }}
-
-                        <div class="blockFooterInf">
-                            <h3>Smart Lubricants</h3>
-                            <ul class="footer-list">
-                                <li><a href="#">Компания</a></li>
-                                <li><a href="#">Применения</a></li>
-                                <li><a href="#">Сервис</a></li>
-                                <li><a href="#">Статьи</a></li>
-                                <li><a href="#">Библиотека</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -88,17 +78,6 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         {# FOOTER AREA #}
                         {{ ns_cms_area(blocks, 'footer3') }}
-
-                        <div class="blockFooterInf">
-                            <h3>Каталог продукции</h3>
-                            <ul class="footer-list">
-                                <li><a href="#">Масла для грузовых авто</a></li>
-                                <li><a href="#">Масла для легковых авто</a></li>
-                                <li><a href="#">Индустриальные масла</a></li>
-                                <li><a href="#">Масла для мотоциклов</a></li>
-                                <li><a href="#">Прочее</a></li>
-                            </ul>
-                        </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         {# FOOTER AREA #}

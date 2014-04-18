@@ -1,0 +1,8 @@
+<div class="blockFooterInf">
+    <h3>Smart Lubricants</h3>
+    <ul class="footer-list">
+        {% for item in menu.children if item.displayed %}
+            <li><a href="{{ item.uri }}">{{ item.label }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

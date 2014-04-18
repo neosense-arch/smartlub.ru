@@ -1,0 +1,32 @@
+{#
+	Common vars
+	* block [NS\CmsBundle\Entity\Block]
+	* settings [NS\CatalogBundle\Block\Settings\CategoriesMenuBlockSettingsModel]
+
+	Root-level vars
+	* menu [Knp\Menu\MenuItem]
+	* matcher [Knp\Menu\Matcher\Matcher]
+
+	Menu child items (via menu.children iterator)
+	* item.label
+	* item.uri
+	* item.hasChildren
+	* item.children
+	* item.extras
+
+	Extra data
+	* category [NS\CmsBundle\Entity\Category]
+		* id
+		* level
+		* title
+		* slug
+#}
+
+<div class="blockFooterInf">
+    <h3>Каталог продукции</h3>
+    <ul class="footer-list">
+        {% for item in menu.children if item.displayed %}
+            <li><a href="{{ item.uri }}">{{ item.label }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
