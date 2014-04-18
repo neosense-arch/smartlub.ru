@@ -24,36 +24,6 @@ avalanche_imagine:
             type: thumbnail
             options: { size: [245, 376], mode: outbound }
 
-        interiors_photo_thumbnail:
+        main_news_item:
             type: thumbnail
-            options: { size: [145, 90], mode: outbound }
-
-        photo_big:
-            type: thumbnail
-            options: { size: [648, 648], mode: inset }
-
-        catalog_category_top_menu:
-            type: thumbnail
-            options: { size: [147, 55], mode: outbound }
-
-        catalog_item_thumbnail:
-            type: thumbnail
-            options: { size: [146, 90], mode: outbound }
-
-        catalog_item_thumbnail_small:
-            type:    chain
-            options:
-                filters:
-                    relative_resize:
-                        heighten: 100
-                    thumbnail:
-                        size: [100, 100]
-                        mode: outbound
-
-        catalog_item_detail_thumbnail:
-            type:    relative_resize
-            options: { widen: 300 }
-
-        catalog_item_detail_full:
-            type:    thumbnail
-            options: { size: [800, 800], mode: inset }
+            options: { size: [180, 120], mode: outbound }

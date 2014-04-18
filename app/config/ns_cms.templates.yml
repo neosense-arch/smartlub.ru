@@ -56,6 +56,9 @@ templates:
                 name: content_tab3
                 title: "Таб 3"
             -
+                name: content_bottom
+                title: "Нижняя часть контентной области"
+            -
                 name: footer1
                 title: "Нижняя область 1"
                 fixed: true
