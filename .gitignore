@@ -1,8 +1,5 @@
 /web/bundles/
-!/web/upload/documents
-!/web/upload/images
-/web/upload/j/
-/web/media/
+/web/upload/
 /web/cgi-bin/
 /web/assetic/
 /app/bootstrap*

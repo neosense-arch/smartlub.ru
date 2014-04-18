@@ -12,6 +12,7 @@ framework:
 avalanche_imagine:
     source_root:  %kernel.root_dir%/../web
     web_root:     %kernel.root_dir%/../web
+    cache_prefix: upload/cache
     filters:
         ns_admin_image:
             type:    thumbnail
@@ -27,3 +28,12 @@ avalanche_imagine:
         main_news_item:
             type: thumbnail
             options: { size: [180, 120], mode: outbound }
+
+        catalog_item_thumbnail:
+            type:    chain
+            options:
+                filters:
+                    thumbnail:
+                        # retina x2
+                        size: [400, 370]
+                        mode: inset

@@ -70,13 +70,13 @@ $(function(){
 	
 	
 		jQuery("#list_img_1").jcarousel({
-			wrap: 'circular',					   	
+			wrap: 'circular',
 			scroll: 1
 		});
-		
+
 		jQuery("#list_img_2").jcarousel({
 			vertical: true,
-			wrap: 'circular',					   	
+			wrap: 'circular',
 			scroll: 1
 		});
 		
