@@ -1,0 +1,49 @@
+{#
+	Common vars
+	* block [NS\CmsBundle\Entity\Block]
+	* settings [NS\CatalogBundle\Block\Settings\CategoriesMenuBlockSettingsModel]
+
+	Root-level vars
+	* menu [Knp\Menu\MenuItem]
+	* matcher [Knp\Menu\Matcher\Matcher]
+
+	Menu child items (via menu.children iterator)
+	* item.label
+	* item.uri
+	* item.hasChildren
+	* item.children
+	* item.extras
+
+	Extra data
+	* category [NS\CmsBundle\Entity\Category]
+		* id
+		* level
+		* title
+		* slug
+#}
+
+<div class="content">
+    <div class="contentTop">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                {% for item in menu.children if item.displayed %}
+                    {% if loop.index % 3 == 1 %}
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="row clearfix">
+                    {% endif %}
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <a href="{{ item.uri }}" class="oneBlockImg">
+                                        <span><img src="{{ asset('upload/j/' ~ item.extras.category.photo) }}" alt=""></span> {{ item.label }}
+                                    </a>
+                                </div>
+
+                    {% if loop.index % 3 == 0 %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

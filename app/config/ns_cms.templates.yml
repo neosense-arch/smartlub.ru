@@ -1,7 +1,7 @@
 templates:
     -
         path:    "NSCmsBundle:Pages:page.html.twig"
-        title:   "Default page template"
+        title:   "Шаблон страницы по умолчанию"
         default: true
         areas:
             -
@@ -15,6 +15,46 @@ templates:
             -
                 name: content
                 title: "Контентная область"
+            -
+                name: footer1
+                title: "Нижняя область 1"
+                fixed: true
+            -
+                name: footer2
+                title: "Нижняя область 2"
+                fixed: true
+            -
+                name: footer3
+                title: "Нижняя область 3"
+                fixed: true
+            -
+                name: footer4
+                title: "Нижняя область 4"
+                fixed: true
+    -
+        path:    "NSCmsBundle:Pages:page_main.html.twig"
+        title:   "Шаблон главной страницы"
+        areas:
+            -
+                name: header
+                title: "Верхняя область"
+                fixed: true
+            -
+                name: menu
+                title: "Область меню"
+                fixed: true
+            -
+                name: content
+                title: "Контентная область"
+            -
+                name: content_tab1
+                title: "Таб 1"
+            -
+                name: content_tab2
+                title: "Таб 2"
+            -
+                name: content_tab3
+                title: "Таб 3"
             -
                 name: footer1
                 title: "Нижняя область 1"
