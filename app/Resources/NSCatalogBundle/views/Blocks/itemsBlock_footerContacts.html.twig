@@ -1,0 +1,11 @@
+{% if items|length %}
+    {% set phone = items[0].settings.phone %}
+    {% set address = items[0].settings.address %}
+
+    <div class="blockFooterInf">
+        <h3>Контактная информация</h3>
+        <p>
+            <strong>Адрес:</strong> {{ address }}
+            <strong>Телефон:</strong> <span>{{ phone|split(' ')|slice(0,2)|join(' ') }} <strong> {{ phone|split(' ')|slice(2)|join(' ') }}</strong></span></p>
+    </div>
+{% endif %}
