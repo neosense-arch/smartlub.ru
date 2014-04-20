@@ -1,3 +1,7 @@
 sl_front_news_item:
     pattern:  /news/{itemSlug}
     defaults: { _controller: NSCmsBundle:Pages:pageName, name: news-item }
+
+sl_front_catalog_load_more:
+    pattern:  /catalog/load-more
+    defaults: { _controller: SLFrontBundle:Items:loadMore }

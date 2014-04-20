@@ -5,3 +5,9 @@ blocks:
         template: SLFrontBundle:Blocks:filtersBlock.html.twig
         settingsFormClass: SL\FrontBundle\Block\Settings\FiltersBlockSettingsForm
         settingsModelClass: SL\FrontBundle\Block\Settings\FiltersBlockSettingsModel
+    -
+        name: SLFrontBundle:Blocks:itemsBlock
+        title: Блок товаров
+        template: SLFrontBundle:Blocks:itemsBlock.html.twig
+        settingsFormClass: SL\FrontBundle\Block\Settings\ItemsBlockSettingsForm
+        settingsModelClass: SL\FrontBundle\Block\Settings\ItemsBlockSettingsModel

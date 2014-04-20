@@ -19,51 +19,9 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @package SL\FrontBundle\Controller
  */
-class BlocksController extends Controller
+class ItemsController extends Controller
 {
-    /**
-     * @param Request                   $request
-     * @param Block                     $block
-     * @param FiltersBlockSettingsModel $settings
-     * @return Response
-     * @throws \Exception
-     */
-    public function filtersBlockAction(Request $request, Block $block, FiltersBlockSettingsModel $settings)
-    {
-        if (!$settings->getVendorCategoryId()) {
-            throw new \Exception("Vendor category id wasn't set");
-        }
-
-        /** @var FiltersService $filtersService */
-        $filtersService = $this->get('sl_front.service.filters');
-        $filters = $filtersService->getFilters();
-        if (!$filters) {
-            $filters = new Filters();
-            $filters->setPriceFrom($settings->getPriceFrom());
-            $filters->setPriceTo($settings->getPriceTo());
-        }
-
-        $formType = new FiltersType($settings->getVendorCategoryId());
-        $form = $this->createForm($formType, $filters);
-
-        $form->handleRequest($request);
-        if ($form->isValid()) {
-            $filtersService->updateFilters($filters);
-        }
-
-        return $this->render($block->getTemplate(), array(
-            'block'    => $block,
-            'settings' => $settings,
-            'form'     => $form->createView(),
-        ));
-    }
-
-    /**
-     * @param Block                   $block
-     * @param ItemsBlockSettingsModel $settings
-     * @return Response
-     */
-    public function itemsBlockAction(Block $block, ItemsBlockSettingsModel $settings)
+    public function loadMoreAction(Request $request)
     {
         /** @var FiltersService $filtersService */
         $filtersService = $this->get('sl_front.service.filters');
@@ -117,17 +75,12 @@ class BlocksController extends Controller
             ->addOrderBy('sOrder.value + 0', 'ASC');
 
         $items = $queryBuilder->getQuery()->getResult();
-        $total = count($items);
 
         // limit (doctrine magic)
-        if ($settings->getLimit()) {
-            $items = array_slice($items, 0, $settings->getLimit());
-        }
+        $items = array_slice($items, $request->query->get('skip'), $request->query->get('limit'));
 
-        return $this->render($block->getTemplate(), array(
-            'block' => $block,
+        return $this->render('SLFrontBundle:Items:loadMore.html.twig', array(
             'items' => $items,
-            'total' => $total,
         ));
     }
 }

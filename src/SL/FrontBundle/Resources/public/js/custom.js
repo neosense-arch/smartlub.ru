@@ -24,7 +24,7 @@
     });
 
     // Init add to cart
-    $('.add-to-cart').click(function(){
+    $('.add-to-cart').live('click', function(){
         $.ajax($(this).attr('data-url'), {
             type: 'POST',
             data: {
@@ -44,6 +44,31 @@
                 $('#cartAdded').modal('show');
             }
         });
+        return false;
+    });
+
+    // Init more items button
+    $('.ns-items-more').click(function(){
+        var elContainer = $('.ns-item-more-container');
+        var elLoader = $('.ns-item-more-loader');
+        elContainer.css({display:'none'});
+        elLoader.css({display:'block'});
+
+        $.ajax(elContainer.attr('data-url'), {
+            type: 'GET',
+            data: {
+                skip: $('.blockProducts li').length,
+                limit: elContainer.attr('data-limit')
+            },
+            success: function(res) {
+                $('.blockProducts ul').append(res);
+                elLoader.css({display:'none'});
+                if (elContainer.attr('data-total') > $('.blockProducts li').length) {
+                    elContainer.css({display:'block'});
+                }
+            }
+        });
+
         return false;
     });
 })(jQuery);

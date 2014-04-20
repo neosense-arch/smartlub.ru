@@ -5,3 +5,22 @@
 #cartAdded .modal-title a {
     text-decoration: underline;
 }
+
+.ns-item-more-loader {
+    display: none;
+}
+.ns-item-more-loader .btn.btn-more,
+.ns-item-more-loader .btn.btn-more:hover {
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    color: #969696;
+    cursor: default;
+    opacity: 1;
+}
+
+.ns-item-more-loader .btn.btn-more span {
+    background: url(../img/ajax-loader.gif) no-repeat left 3px;
+    padding: 2px 0 2px 19px;
+    position: relative;
+    top: -2px;
+}
