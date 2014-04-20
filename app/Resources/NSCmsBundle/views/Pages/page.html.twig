@@ -17,8 +17,24 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/slfront/css/style.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/slfront/css/custom.css') }}" />
     <!--[if lt IE 9]><script src="{{ asset('/bundles/slfront/js/html5.js') }}"></script><![endif]-->
+
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?111"></script>
+
+    <script type="text/javascript">
+        VK.init({apiId: 4318546, onlyWidgets: true});
+//        VK.init({apiId: 4318551, onlyWidgets: true});
+    </script>
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=520368301418408";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <section class="lineTop">
     <div class="container-fluid">

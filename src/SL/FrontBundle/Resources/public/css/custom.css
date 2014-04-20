@@ -24,3 +24,18 @@
     position: relative;
     top: -2px;
 }
+
+.titleSocial {
+    width: 230px;
+}
+.titleSocial .widget {
+    float:left;
+}
+
+.card-tab .tab-content ul {
+    font: 13px/17px 'Open Sans';
+    color: #000000;
+    padding: 7px 20px 7px 40px;
+}
+.card-tab .tab-content ul li {
+}

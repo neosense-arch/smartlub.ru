@@ -37,3 +37,13 @@ avalanche_imagine:
                         # retina x2
                         size: [400, 370]
                         mode: inset
+
+        catalog_item_medium:
+            type: thumbnail
+            # retina x2
+            options: { size: [916, 916], mode: outbound }
+
+        catalog_item_small:
+            type: thumbnail
+            # retina x2
+            options: { size: [196, 196], mode: outbound }
