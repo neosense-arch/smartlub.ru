@@ -1,10 +1,29 @@
-$(window).load(function () {
+(function ($) {
+    // Price slider initialization
+    var elSlider = $("#slider-price");
+    elSlider.find(".slider").slider({
+        range: true,
+        min: +elSlider.attr('data-from'),
+        max: +elSlider.attr('data-to'),
+        step: +elSlider.attr('data-step'),
+        values: [$("input.ns-price-from").val(), $("input.ns-price-to").val()],
+        slide: function (event, ui) {
+            elSlider.find(".left input").val(ui.values[ 0 ]);
+            elSlider.find(".right input").val(ui.values[ 1 ]);
+        }
+    });
+    $('.ui-slider-handle').last().addClass('last');
+    elSlider.find(".left input").val(elSlider.find(".slider").slider("values", 0));
+    elSlider.find(".right input").val(elSlider.find(".slider").slider("values", 1));
+
+    // Init flexslider
     $('.flexslider').flexslider({
         animation: "slide",
         touch: false,
         slideshow: true
     });
 
+    // Init add to cart
     $('.add-to-cart').click(function(){
         $.ajax($(this).attr('data-url'), {
             type: 'POST',
@@ -25,10 +44,9 @@ $(window).load(function () {
                 $('#cartAdded').modal('show');
             }
         });
-
         return false;
     });
-});
+})(jQuery);
 
 $(function(){
 

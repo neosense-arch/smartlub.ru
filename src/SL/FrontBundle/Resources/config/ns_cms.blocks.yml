@@ -1,0 +1,7 @@
+blocks:
+    -
+        name: SLFrontBundle:Blocks:filtersBlock
+        title: Блок фильтров
+        template: SLFrontBundle:Blocks:filtersBlock.html.twig
+        settingsFormClass: SL\FrontBundle\Block\Settings\FiltersBlockSettingsForm
+        settingsModelClass: SL\FrontBundle\Block\Settings\FiltersBlockSettingsModel

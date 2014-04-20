@@ -1,7 +1,6 @@
 // page init
 jQuery(function(){
     sliderWeight();
-    sliderPrice();
     sliderSize();
 });
 
@@ -21,22 +20,6 @@ function sliderWeight() {
     jQuery('.ui-slider-handle').last().addClass('last')
     jQuery( "#slider-weight .left input" ).val($( "#slider-weight .slider" ).slider( "values", 0 ));
     jQuery( "#slider-weight .right input" ).val($( "#slider-weight .slider" ).slider( "values", 1 ) );
-}
-function sliderPrice() {
-    jQuery( "#slider-price .slider" ).slider({
-        range: true,
-        min: 100,
-        max: 100000,
-        step: 100,
-        values: [ jQuery("input[name='price-from']").val(), jQuery("input[name='price-to']").val()],
-        slide: function( event, ui ) {
-            jQuery( "#slider-price .left input" ).val(ui.values[ 0 ]);
-            jQuery( "#slider-price .right input" ).val(ui.values[ 1 ]);
-        }
-    });
-    jQuery('.ui-slider-handle').last().addClass('last')
-    jQuery( "#slider-price .left input" ).val($( "#slider-price .slider" ).slider( "values", 0 ));
-    jQuery( "#slider-price .right input" ).val($( "#slider-price .slider" ).slider( "values", 1 ) );
 }
 
 function sliderSize() {

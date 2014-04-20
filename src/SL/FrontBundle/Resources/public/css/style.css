@@ -764,6 +764,9 @@ nav ul.nav li.active a { background: #62db00; }
     margin:0;
     margin-left: -9px;
 }
+.slider a {
+    outline: none;
+}
 .slider-box .inner{
     height:1%;
 	font:11px 'Open Sans';
@@ -791,7 +794,9 @@ nav ul.nav li.active a { background: #62db00; }
 	font:11px 'Open Sans';
 	color:#8c8c8c;
 	height:14px;
-	padding:2px 0 0 0;}
+    padding: 1px 3px 0 0;
+    text-align: right;
+}
 	
 .blockFormOrder{
 	padding:41px 0 44px 0;}
