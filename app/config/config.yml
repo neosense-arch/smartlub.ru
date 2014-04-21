@@ -47,3 +47,10 @@ avalanche_imagine:
             type: thumbnail
             # retina x2
             options: { size: [196, 196], mode: outbound }
+
+        cart_item_thumbnail:
+            type: thumbnail
+            options:
+                # retina x2
+                size: [196, 196]
+                mode: inset

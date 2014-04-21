@@ -11,14 +11,16 @@
     <div class="row clearfix">
         <div class="col-lg-12">
             <div class="blockBasket">
-                <form class="ns-cart-form" data-url="{{ url('ns_shop_cart_count') }}">
+                <form class="ns-cart-form" data-url="{{ url('ns_shop_cart_count') }}" data-delete-url="{{ url('ns_shop_cart_remove') }}">
                     {% for orderItem in order.orderItems %}
                         <div class="itemBasket">
                             <div class="row clearfix">
                                 <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 cartTop">
                                     <div class="row clearfix">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                            <a href="#"><img src="{{ ('upload/j/' ~ orderItem.item.settings.photos[0]) | apply_filter('catalog_item_medium') }}" alt="" width="98" height="98"></a>
+                                            <a href="{{ url('ns_catalog_item', {categorySlug: orderItem.item.category.slug, itemSlug: orderItem.item.slug}) }}">
+                                                <img class="itemImg" src="{{ ('upload/j/' ~ orderItem.item.settings.photos[0]) | apply_filter('cart_item_thumbnail') }}" alt="" >
+                                            </a>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                             <div class="row clearfix">
@@ -45,7 +47,7 @@
                                             <p class="price-last">{{ orderItem.totalPrice|ns_price }} руб.</p>
                                         </div>
                                         <div class="col-lg-5 col-md-5 col-sm-4 col-xs-4">
-                                            <a href="#" class="btn btn-default">Удалить</a>
+                                            <a href="#" class="btn btn-default ns-cart-delete" data-id="{{ orderItem.item.id }}">Удалить</a>
                                         </div>
                                     </div>
                                 </div>
@@ -63,24 +65,9 @@
             <div class="col-lg-12">
                 <div class="boxSumm">
                     <p><span>Итого:</span> {{ order.totalPrice|ns_price }} руб.</p>
-                    <a href="#" class="btn btn-default btn-lg">Оформить заказ</a>
+                    <a href="{{ url('ns_cms_page_name', {name: 'checkout'}) }}" class="btn btn-default btn-lg">Оформить заказ</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<table>
-    <tr>
-        <th>Количество</th>
-        <th>Наименование</th>
-    </tr>
-    {% for orderItem in order.orderItems %}
-        <tr>
-            <td>{{ orderItem.count }}</td>
-            <td>{{ orderItem.item.title }}</td>
-        </tr>
-    {% endfor %}
-</table>
-
-<p>Всего: {{ order.totalCount }}, ${{ order.totalPrice }}</p>

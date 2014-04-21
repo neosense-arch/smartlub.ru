@@ -95,6 +95,27 @@
         $(this).keyup(fnHandler);
     });
 
+    // Cart item delete
+    $('.ns-cart-delete').click(function(){
+        if (!confirm('Вы уверены?')) {
+            return false;
+        }
+
+        $.ajax($(this).parents('.ns-cart-form').attr('data-delete-url'), {
+            type: 'POST',
+            data: {
+                itemId: +$(this).attr('data-id')
+            },
+            success: function(res) {
+                $('.boxSumm p').html('<span>Итого:</span> ' + res.totalPrice.toFixed(2).replace('.', ',') + ' руб.');
+            }
+        });
+
+        $(this).parents('.itemBasket').remove();
+
+        return false;
+    });
+
 })(jQuery);
 
 $(function(){
