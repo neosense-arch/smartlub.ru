@@ -71,6 +71,30 @@
 
         return false;
     });
+
+    // Cart item count
+    var fnHandler = function(e){
+        if (e.which < 48 || e.which > 57) {
+            return;
+        }
+
+        var itemPrice = $(this).attr('data-price') * $(this).val();
+        $(this).parents('.itemBasket').find('.price-last').text(itemPrice.toFixed(2).replace('.', ',') + ' руб.');
+
+        $.ajax($(this).parents('.ns-cart-form').attr('data-url'), {
+            'type': 'POST',
+            'data': $('.ns-cart-form').serialize(),
+            'success': function(res){
+                $('.boxSumm p').html('<span>Итого:</span> ' + res.totalPrice.toFixed(2).replace('.', ',') + ' руб.');
+            }
+        });
+    };
+
+    $('.ns-item-count').each(function(){
+        $(this).number(true, '0', '.', '');
+        $(this).keyup(fnHandler);
+    });
+
 })(jQuery);
 
 $(function(){

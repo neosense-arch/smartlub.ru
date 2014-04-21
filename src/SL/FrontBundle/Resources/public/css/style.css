@@ -662,11 +662,13 @@ nav ul.nav li.active a { background: #62db00; }
 	font:bold 18px/24px 'Open Sans';
 	color:#979797;
 	padding:40px 0 0 0;
-	text-align:center;}
+	text-align:center;
+    margin-top: -2px;
+}
 .padding{ padding-left:0px!important; padding-right:0px!important;}
 
 .itemBasket p.price-last{
-	font:bold 24px/28px 'Open Sans';
+	font:bold 22px/28px 'Open Sans';
 	color:#191919;
 	padding:35px 0 0 12px;
 	text-align:center;

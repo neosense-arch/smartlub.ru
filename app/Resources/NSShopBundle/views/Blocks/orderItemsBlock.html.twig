@@ -1,0 +1,86 @@
+<div class="contentTop pageTitle">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <h1>Ваша корзина</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="blockBasket">
+                <form class="ns-cart-form" data-url="{{ url('ns_shop_cart_count') }}">
+                    {% for orderItem in order.orderItems %}
+                        <div class="itemBasket">
+                            <div class="row clearfix">
+                                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 cartTop">
+                                    <div class="row clearfix">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <a href="#"><img src="{{ ('upload/j/' ~ orderItem.item.settings.photos[0]) | apply_filter('catalog_item_medium') }}" alt="" width="98" height="98"></a>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                            <div class="row clearfix">
+                                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                                    <div class="nameProduct">
+                                                        <a href="#">{{ orderItem.item.title }}</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                    <p class="price">{{ orderItem.item.settings.price|ns_price }} руб.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                                            <div class="boxSelect">
+                                                <input type="text" value="{{ orderItem.count }}" class="ns-item-count" data-price="{{ orderItem.item.settings.price|replace(',', '.') }}" name="count[{{ orderItem.item.id }}]">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                            <p class="price-last">{{ orderItem.totalPrice|ns_price }} руб.</p>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-4 col-xs-4">
+                                            <a href="#" class="btn btn-default">Удалить</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="boxBottom">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="boxSumm">
+                    <p><span>Итого:</span> {{ order.totalPrice|ns_price }} руб.</p>
+                    <a href="#" class="btn btn-default btn-lg">Оформить заказ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <th>Количество</th>
+        <th>Наименование</th>
+    </tr>
+    {% for orderItem in order.orderItems %}
+        <tr>
+            <td>{{ orderItem.count }}</td>
+            <td>{{ orderItem.item.title }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<p>Всего: {{ order.totalCount }}, ${{ order.totalPrice }}</p>

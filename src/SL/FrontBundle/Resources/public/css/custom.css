@@ -39,3 +39,14 @@
 }
 .card-tab .tab-content ul li {
 }
+
+
+.blockBasket .ns-item-count {
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px 0 0 0;
+}
