@@ -1,5 +1,9 @@
-<ul class="productsList">
-    {% for item in items %}
-        {% include 'NSCatalogBundle:Blocks:_item.html.twig' %}
-    {% endfor %}
-</ul>
+{% if items|length %}
+    <ul class="productsList">
+        {% for item in items %}
+            {% include 'NSCatalogBundle:Blocks:_item.html.twig' %}
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Нет товаров для отображения</p>
+{% endif %}

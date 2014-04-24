@@ -3,6 +3,7 @@
 namespace SL\FrontBundle\Controller;
 
 use Doctrine\ORM\QueryBuilder;
+use NS\CatalogBundle\Entity\Category;
 use NS\CatalogBundle\Service\CatalogService;
 use NS\CmsBundle\Entity\Block;
 use SL\FrontBundle\Block\Settings\FiltersBlockSettingsModel;
@@ -10,6 +11,7 @@ use SL\FrontBundle\Block\Settings\ItemsBlockSettingsModel;
 use SL\FrontBundle\Form\Type\FiltersType;
 use SL\FrontBundle\Model\Filters;
 use SL\FrontBundle\Service\FiltersService;
+use SL\FrontBundle\Service\ItemService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -61,9 +63,10 @@ class BlocksController extends Controller
     /**
      * @param Block                   $block
      * @param ItemsBlockSettingsModel $settings
+     * @param string                  $categorySlug
      * @return Response
      */
-    public function itemsBlockAction(Block $block, ItemsBlockSettingsModel $settings)
+    public function itemsBlockAction(Block $block, ItemsBlockSettingsModel $settings, $categorySlug = null)
     {
         /** @var FiltersService $filtersService */
         $filtersService = $this->get('sl_front.service.filters');
@@ -72,51 +75,21 @@ class BlocksController extends Controller
             $filters = new Filters();
         }
 
-        /** @var QueryBuilder $queryBuilder */
-        $queryBuilder = $this->getDoctrine()->getManager()->createQueryBuilder();
-
-        // building query
-        $queryBuilder
-            ->select('i', 'c', 's')
-            ->from('NSCatalogBundle:Item', 'i')
-            ->join('i.category', 'c')
-            ->join('i.rawSettings', 's')
-
-            // visible
-            ->andWhere('i.visible = :visible')
-            ->setParameter('visible', true)
-        ;
-
-        // vendor
-        if ($filters->getVendor()) {
-            $queryBuilder
-                ->join('i.rawSettings', "s1", 'WITH', "s1.name = :name1 AND s1.value IN (:value1)")
-                ->setParameter("name1", 'vendor')
-                ->setParameter("value1", $filters->getVendor()->getId());
+        // category condition
+        $category = null;
+        if ($categorySlug) {
+            /** @var CatalogService $catalogService */
+            $catalogService = $this->get('ns_catalog_service');
+            $category = $catalogService->getCategoryBySlug($categorySlug);
+            if (!$category) {
+                return new Response('', 404);
+            }
         }
 
-        // price
-        if ($filters->getPriceFrom()) {
-            $queryBuilder
-                ->join('i.rawSettings', "s2", 'WITH', "s2.name = :name2 AND s2.value >= :value2")
-                ->setParameter("name2", 'price')
-                ->setParameter("value2", (int)$filters->getPriceFrom());
-        }
-        if ($filters->getPriceTo()) {
-            $queryBuilder
-                ->join('i.rawSettings', "s3", 'WITH', "s3.name = :name3 AND s3.value <= :value3")
-                ->setParameter("name3", 'price')
-                ->setParameter("value3", (int)$filters->getPriceTo());
-        }
+        /** @var ItemService $itemService */
+        $itemService = $this->get('sl_front.service.item');
+        $items = $itemService->getItems($filters, $category);
 
-        // ordering
-        // adding order expression
-        $queryBuilder
-            ->join('i.rawSettings', 'sOrder', 'WITH', "sOrder.name = :sOrderName")
-            ->setParameter("sOrderName", 'price')
-            ->addOrderBy('sOrder.value + 0', 'ASC');
-
-        $items = $queryBuilder->getQuery()->getResult();
         $total = count($items);
 
         // limit (doctrine magic)
@@ -125,9 +98,10 @@ class BlocksController extends Controller
         }
 
         return $this->render($block->getTemplate(), array(
-            'block' => $block,
-            'items' => $items,
-            'total' => $total,
+            'block'        => $block,
+            'items'        => $items,
+            'total'        => $total,
+            'categorySlug' => $categorySlug,
         ));
     }
 }

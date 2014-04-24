@@ -1,2 +1,2 @@
 ns_admin:
-    bundles: [NSAdminBundle, NSCmsBundle, NSUserBundle, NSCatalogBundle, NSShopBundle, SLFrontBundle]
+    bundles: [NSAdminBundle, NSCmsBundle, NSUserBundle, NSCatalogBundle, NSShopBundle, SLFrontBundle, NSFeedbackBundle]

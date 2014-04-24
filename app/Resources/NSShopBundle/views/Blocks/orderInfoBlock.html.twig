@@ -1,0 +1,73 @@
+{% if order.orderItems | length %}
+    <div class="content">
+        <div class="contentTop pageTitle">
+            <div class="container-fluid">
+                <div class="row clearfix">
+                    <div class="col-lg-12">
+                        <h1>Оформление заказа</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form action="" name="checkout" method="post">
+            <div class="container-fluid">
+                <div class="row clearfix">
+                    <div class="col-lg-12">
+                        <div class="blockFormOrder">
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Имя *</label>
+                                        {{ form_widget(form.firstName, { 'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Фамилия *</label>
+                                        {{ form_widget(form.lastName, { 'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email *</label>
+                                        {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Телефон *</label>
+                                        {{ form_widget(form.phone, { 'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Город</label>
+                                        {{ form_widget(form.city, { 'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Индекс</label>
+                                        {{ form_widget(form.zip, { 'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Адрес доставки</label>
+                                        {{ form_widget(form.address, { 'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Комментарий к заказу</label>
+                                        {{ form_widget(form.comments, { 'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="boxBottom">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                        <div class="col-lg-12">
+                            <div class="boxSumm">
+                                <button type="submit" class="btn btn-default btn-lg">Оформить заказ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ form_rest(form) }}
+        </form>
+    </div>
+{% endif %}

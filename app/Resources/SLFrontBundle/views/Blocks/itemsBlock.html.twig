@@ -14,7 +14,7 @@
         <div class="row clearfix">
             <div class="col-lg-12">
                 {% if total > items|length %}
-                    <div class="boxSumm ns-item-more-container" data-url="{{ url('sl_front_catalog_load_more') }}" data-total="{{ total }}" data-limit="{{ items|length }}">
+                    <div class="boxSumm ns-item-more-container" data-url="{{ url('sl_front_catalog_load_more', {categorySlug: categorySlug}) }}" data-total="{{ total }}" data-limit="{{ items|length }}">
                         <a href="#" class="btn btn-more ns-items-more"><span>Показать еще</span></a>
                     </div>
                     <div class="boxSumm ns-item-more-loader">

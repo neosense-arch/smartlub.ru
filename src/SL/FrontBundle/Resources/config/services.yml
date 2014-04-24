@@ -2,3 +2,7 @@ services:
     sl_front.service.filters:
         class: 'SL\FrontBundle\Service\FiltersService'
         arguments: [@session, @ns_catalog.repository.item]
+
+    sl_front.service.item:
+        class: 'SL\FrontBundle\Service\ItemService'
+        arguments: [@doctrine.orm.entity_manager]
