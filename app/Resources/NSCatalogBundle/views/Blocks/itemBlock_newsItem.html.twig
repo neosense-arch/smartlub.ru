@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="textPage">
+                <div class="boxTinymce" style="padding: 0">
+                    <div class="tinymce">
+                        <h1>{{ item.title }}</h1>
+
+                        <img src="{{ ('upload/j/' ~ item.settings.photo) | apply_filter('main_news_item') }}" alt="" style="float:left;margin:10px;">
+
+                        {{ item.settings.content|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
