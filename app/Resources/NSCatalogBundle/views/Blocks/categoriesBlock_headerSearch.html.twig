@@ -2,17 +2,21 @@
 <div class="searchTop">
     <div class="searchTopWrapper">
         <div class="boxSearch">
-            <form action="" name="Search" method="post">
-                <input type="submit" value="" >
+            <form action="{{ url('ns_cms_page_name', {name: 'search'}) }}" name="Search" method="get">
+                <input type="submit" value="">
                 <div class="selectSearch">
-                    <select class="styled">
+                    <select class="styled" name="category">
                         <option value="">Все товары</option>
                         {% for category in categories %}
-                            <option value="{{ category.id }}">{{ category.title }}</option>
+                            <option value="{{ category.id }}"{% if app.request.query.get('category') == category.id %} selected="selected"{% endif %}>
+                                {{ category.title }}
+                            </option>
                         {% endfor %}
                     </select>
                 </div>
-                <div class="inputSearch"><input type="text" name="search" placeholder="Поиск ..."></div>
+                <div class="inputSearch">
+                    <input type="text" name="query" placeholder="Поиск ..." value="{{ app.request.query.get('query', '') }}">
+                </div>
             </form>
         </div>
     </div>
