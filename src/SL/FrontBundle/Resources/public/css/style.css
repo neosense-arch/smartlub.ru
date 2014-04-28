@@ -318,7 +318,7 @@ nav ul.nav li a{
 	color:#ffffff;
 	text-transform:uppercase;
 	text-decoration:none;}
-nav ul.nav li:last-child a{ padding-right:0px;}
+nav ul.nav li:last-child a{}
 nav ul.nav li a:hover{ text-decoration:underline; background:none;}
 nav ul.nav li.active a { background: #62db00; }
 

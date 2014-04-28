@@ -1,0 +1,18 @@
+{% extends 'NSCmsBundle:Pages:page.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="textPage">
+                    <div class="boxTinymce" style="padding: 0">
+                        <div class="tinymce">
+                            {# CONTENT AREA #}
+                            {{ ns_cms_area(blocks, 'content') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -74,3 +74,69 @@ templates:
                 name: footer4
                 title: "Нижняя область 4"
                 fixed: true
+    -
+        path:    "NSCmsBundle:Pages:page_text.html.twig"
+        title:   "Шаблон текстовой страницы"
+        areas:
+            -
+                name: header
+                title: "Верхняя область"
+                fixed: true
+            -
+                name: menu
+                title: "Область меню"
+                fixed: true
+            -
+                name: content
+                title: "Контентная область"
+            -
+                name: footer1
+                title: "Нижняя область 1"
+                fixed: true
+            -
+                name: footer2
+                title: "Нижняя область 2"
+                fixed: true
+            -
+                name: footer3
+                title: "Нижняя область 3"
+                fixed: true
+            -
+                name: footer4
+                title: "Нижняя область 4"
+                fixed: true
+    -
+        path:    "NSCmsBundle:Pages:page_submenu.html.twig"
+        title:   "Шаблон страницы с субменю"
+        areas:
+            -
+                name: header
+                title: "Верхняя область"
+                fixed: true
+            -
+                name: menu
+                title: "Область меню"
+                fixed: true
+            -
+                name: left
+                title: "Область субменю"
+                fixed: true
+            -
+                name: content
+                title: "Контентная область"
+            -
+                name: footer1
+                title: "Нижняя область 1"
+                fixed: true
+            -
+                name: footer2
+                title: "Нижняя область 2"
+                fixed: true
+            -
+                name: footer3
+                title: "Нижняя область 3"
+                fixed: true
+            -
+                name: footer4
+                title: "Нижняя область 4"
+                fixed: true

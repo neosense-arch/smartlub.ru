@@ -1,0 +1,30 @@
+{#
+    Optional block to set a subject
+    Default value: Новое сообщение обратной связи
+#}
+{% block subject -%}{%- endblock %}
+
+{#
+    Optional block to set a from field
+    Default value: noreply@<YOUR-DOMAIN>
+#}
+{% block from -%}{%- endblock %}
+
+{#
+    Required block to set message body
+
+    Variables:
+    * data [assoc array]                   user form data
+    * type [NS\CatalogBundle\Entity\Type]  catalog Type object (describes form elements)
+    * form [NS\FeedbackBundle\Entity\Form] feedback Form instance
+#}
+{% block content %}
+    <h2>Сообщение обратной связи</h2>
+
+    {% for element in type.elements %}
+        <p>
+            <b>{{ element.title }}:</b><br>
+            {{ attribute(data, element.name) }}
+        </p>
+    {% endfor %}
+{% endblock %}

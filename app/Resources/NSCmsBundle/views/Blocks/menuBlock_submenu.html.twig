@@ -1,0 +1,19 @@
+<div class="titleNav">
+    {% for item in menu.children if matcher.isCurrent(item) or matcher.isAncestor(item) %}
+        {{ item.label }}
+    {% endfor %}
+    <button type="button" class="nav-left-toggle">
+        <span class="icon-bar-nav"></span>
+        <span class="icon-bar-nav"></span>
+        <span class="icon-bar-nav"></span>
+    </button>
+</div>
+<div class="leftNav">
+    <ul>
+        {% for item in menu.children if item.displayed %}
+            <li{% if matcher.isCurrent(item) or matcher.isAncestor(item) %} class="active"{% endif %}>
+                <a href="{{ item.uri }}">{{ item.label }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
