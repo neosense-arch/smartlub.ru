@@ -8,6 +8,7 @@
 /app/logs/*
 /app/config/parameters.yml
 /app/deploy/
+/app/backup/
 /app/search/
 /app/spool/
 /vendor/

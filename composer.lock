@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a71227ea4dabf2590c764e5a9c84ff4f",
+    "hash": "88d260131a3d4ebd1dfc08e5e8365e2f",
     "packages": [
         {
             "name": "avalanche123/imagine-bundle",
@@ -2075,16 +2075,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.8.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "392ef35fd470638e08d0160d6b1cbab63cb23174"
+                "reference": "65026b610f8c19e61d7242f600530677b0466aac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/392ef35fd470638e08d0160d6b1cbab63cb23174",
-                "reference": "392ef35fd470638e08d0160d6b1cbab63cb23174",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/65026b610f8c19e61d7242f600530677b0466aac",
+                "reference": "65026b610f8c19e61d7242f600530677b0466aac",
                 "shasum": ""
             },
             "require": {
@@ -2112,7 +2112,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8.x-dev"
+                    "dev-master": "1.9.x-dev"
                 }
             },
             "autoload": {
@@ -2139,7 +2139,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-03-23 19:50:26"
+            "time": "2014-04-24 13:29:03"
         },
         {
             "name": "mopa/bootstrap-bundle",
@@ -2257,12 +2257,12 @@
         },
         {
             "name": "neosense/admin-bundle",
-            "version": "1.9.0",
+            "version": "1.11.0",
             "target-dir": "NS/AdminBundle",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:phpinfo/nsadminbundle.git",
-                "reference": "747204c68f9291afb64e8ded8e4160cb52df59cf"
+                "reference": "df97b8744bf6c74c05ff3d72156c71c92bd69983"
             },
             "require": {
                 "php": ">=5.3.2"
@@ -2286,7 +2286,7 @@
             "keywords": [
                 "admin"
             ],
-            "time": "2014-04-06 09:42:33"
+            "time": "2014-04-19 18:58:49"
         },
         {
             "name": "neosense/cache-bundle",
@@ -2319,12 +2319,12 @@
         },
         {
             "name": "neosense/catalog-bundle",
-            "version": "1.11.0",
+            "version": "1.13.0",
             "target-dir": "NS/CatalogBundle",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:phpinfo/nscatalogbundle.git",
-                "reference": "07199daedc34b48c77e15c7c597519f9bbd7fef8"
+                "reference": "ae0dc8b622778c96fd8e83305a6953200ddd6da0"
             },
             "require": {
                 "neosense/cms-bundle": ">=1.5.0",
@@ -2349,16 +2349,16 @@
                 "catalog",
                 "eshop"
             ],
-            "time": "2014-04-06 10:20:19"
+            "time": "2014-04-28 09:45:58"
         },
         {
             "name": "neosense/cms-bundle",
-            "version": "1.13.3",
+            "version": "1.14.0",
             "target-dir": "NS/CmsBundle",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:phpinfo/nscmsbundle.git",
-                "reference": "9bf2f7c59b98d926c21984a0941a45a049b51ad0"
+                "reference": "bf240f3cb87032c707c94c4bb9efc715fac21c28"
             },
             "require": {
                 "php": ">=5.3.2"
@@ -2383,16 +2383,16 @@
                 "blocks",
                 "cms"
             ],
-            "time": "2014-03-31 14:06:20"
+            "time": "2014-04-28 09:01:21"
         },
         {
             "name": "neosense/core-bundle",
-            "version": "1.21.0",
+            "version": "1.22.0",
             "target-dir": "NS/CoreBundle",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:phpinfo/nscorebundle.git",
-                "reference": "609874ff2a7842591f9121aded19028a2f1b450b"
+                "reference": "7d4324eee2768ede8a438c6c2184206a46c9eb45"
             },
             "require": {
                 "avalanche123/imagine-bundle": "2.1.*",
@@ -2413,10 +2413,10 @@
                 "knplabs/knp-paginator-bundle": "2.4.*",
                 "liuggio/excelbundle": "1.0.*",
                 "mopa/bootstrap-bundle": "2.2.*@alpha",
-                "neosense/admin-bundle": "1.9.*",
+                "neosense/admin-bundle": "1.11.*",
                 "neosense/cache-bundle": "1.2.*",
-                "neosense/catalog-bundle": "1.11.*",
-                "neosense/cms-bundle": "1.13.*",
+                "neosense/catalog-bundle": "1.13.*",
+                "neosense/cms-bundle": "1.14.*",
                 "neosense/deploy-bundle": "1.1.*",
                 "neosense/documents-bundle": "1.1.*",
                 "neosense/feedback-bundle": "1.2.*",
@@ -2427,7 +2427,7 @@
                 "neosense/routing-bundle": "1.2.*",
                 "neosense/search-bundle": "1.2.*",
                 "neosense/seo-bundle": "1.0.*",
-                "neosense/shop-bundle": "1.4.*",
+                "neosense/shop-bundle": "1.5.*",
                 "neosense/user-bundle": "1.5.*",
                 "php": ">=5.3.3",
                 "sensio/distribution-bundle": "~2.3",
@@ -2458,7 +2458,7 @@
                 }
             ],
             "description": "NS Core Bundle",
-            "time": "2014-04-06 21:47:35"
+            "time": "2014-04-28 12:11:13"
         },
         {
             "name": "neosense/deploy-bundle",
@@ -2531,12 +2531,12 @@
         },
         {
             "name": "neosense/feedback-bundle",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "target-dir": "NS/FeedbackBundle",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:phpinfo/nsfeedbackbundle.git",
-                "reference": "5b56d97f3f36b087a333f7bf66711a2e9ca6fd8b"
+                "reference": "562de4564ed6696724a4b6ad8052469d6f2d48d2"
             },
             "require": {
                 "php": ">=5.3.2"
@@ -2561,7 +2561,7 @@
                 "feedback",
                 "forms"
             ],
-            "time": "2014-03-22 20:48:25"
+            "time": "2014-04-13 18:27:25"
         },
         {
             "name": "neosense/gallery-bundle",
@@ -2793,12 +2793,12 @@
         },
         {
             "name": "neosense/shop-bundle",
-            "version": "1.4.1",
+            "version": "1.5.0",
             "target-dir": "NS/ShopBundle",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:phpinfo/nsshopbundle.git",
-                "reference": "cfd9b60318083e44565a332ab5fb365e7cae65ab"
+                "reference": "e0f391f55ae4abd8016055ea52cd0f2b66394ac3"
             },
             "require": {
                 "php": ">=5.3.2"
@@ -2822,16 +2822,16 @@
             "keywords": [
                 "eshop"
             ],
-            "time": "2014-03-11 13:56:26"
+            "time": "2014-04-24 07:55:16"
         },
         {
             "name": "neosense/user-bundle",
-            "version": "1.5.2",
+            "version": "1.5.3",
             "target-dir": "NS/UserBundle",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:phpinfo/nsuserbundle.git",
-                "reference": "264ef7edceb510b3092cea625b1015e7d2b2fad0"
+                "reference": "af1f60fc096bc9b8444cdbd65248df9bc8429afa"
             },
             "require": {
                 "php": ">=5.3.2"
@@ -2855,7 +2855,7 @@
                 "cms",
                 "user"
             ],
-            "time": "2014-03-29 16:23:05"
+            "time": "2014-04-28 09:29:48"
         },
         {
             "name": "phpoffice/phpexcel",
@@ -3219,25 +3219,28 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.1.0",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "748c01c1144713ac0118396935d10b6ceec91b68"
+                "reference": "043e336b871f17a117f76ef8e190eddfc04c8d48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/748c01c1144713ac0118396935d10b6ceec91b68",
-                "reference": "748c01c1144713ac0118396935d10b6ceec91b68",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/043e336b871f17a117f76ef8e190eddfc04c8d48",
+                "reference": "043e336b871f17a117f76ef8e190eddfc04c8d48",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
+            "require-dev": {
+                "mockery/mockery": "~0.9.1"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.1-dev"
+                    "dev-master": "5.2-dev"
                 }
             },
             "autoload": {
@@ -3266,7 +3269,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2014-03-18 09:03:27"
+            "time": "2014-05-08 08:11:19"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -3500,16 +3503,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.4.3",
+            "version": "v2.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "3199b2e0d194f71fe2e13c95768b2ef22206682b"
+                "reference": "4697c33cdfb520dcf83fd6e4f7864fa26ddaebea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/3199b2e0d194f71fe2e13c95768b2ef22206682b",
-                "reference": "3199b2e0d194f71fe2e13c95768b2ef22206682b",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/4697c33cdfb520dcf83fd6e4f7864fa26ddaebea",
+                "reference": "4697c33cdfb520dcf83fd6e4f7864fa26ddaebea",
                 "shasum": ""
             },
             "require": {
@@ -3611,7 +3614,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-04-04 10:27:02"
+            "time": "2014-04-27 13:39:18"
         },
         {
             "name": "trsteel/ckeditor-bundle",

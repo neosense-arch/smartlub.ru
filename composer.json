@@ -7,7 +7,7 @@
         "psr-0": { "": "src/" }
     },
     "require": {
-		"neosense/core-bundle": "1.21.*"
+		"neosense/core-bundle": "1.22.*"
     },
     "minimum-stability": "alpha",
     "extra": {

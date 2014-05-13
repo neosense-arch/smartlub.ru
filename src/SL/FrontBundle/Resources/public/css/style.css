@@ -971,10 +971,19 @@ left:0px!important; top:0px!important;}
 	width:100%;}
 .infCardCont{
 	padding:5px 0 0 500px;}
-.infCardCont p{
+.infCardCont h1 {
+    font:30px/35px 'Open Sans';
+    color:#000000;
+    padding:0 0 35px 0;
+}
+.infCardCont p,
+.infCardCont ul {
 	font:14px/20px 'Open Sans';
 	color:#000000;
 	padding:0 0 35px 0;}
+.infCardCont ul {
+    padding-left: 30px;
+}
 	
 .cardPrice{
 	border:1px solid #e6e6e6;
@@ -1061,11 +1070,29 @@ left:0px!important; top:0px!important;}
 	font:13px/17px 'Open Sans';
 	color:#000000;}
 	
-.card-tab .tab-content p{
+.card-tab .tab-content p,
+.card-tab .tab-content td,
+.card-tab .tab-content th{
 	font:13px/17px 'Open Sans';
 	color:#000000;
-	padding:7px 20px 7px 20px;}
-	
+	padding:7px 20px;
+}
+.card-tab .tab-content td,
+.card-tab .tab-content th {
+    border-right: solid 1px #ccc;
+    padding: 7px;
+}
+.card-tab .tab-content th {
+    background: transparent !important;
+    font-weight: bold;
+}
+.card-tab .tab-content tr:nth-child(2n+1) {
+    background: #eee;
+}
+.card-tab .tab-content td:last-child,
+.card-tab .tab-content th:last-child {
+    border-right: none;
+}
 .top_1{
 	padding-top:20px;}
 
